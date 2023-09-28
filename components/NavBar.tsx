@@ -13,11 +13,11 @@ function NavBar() {
 
   return (
     <div className='mb-1'>
-        <div className='sm:h-2 bg-slate-800 p-0 mt-0 w-full'></div>
+        <div className='sm:h-1 bg-[#223252] p-0 mt-0 w-full'></div>
 
         <div >
-
-            <div className='flex bg-[#008080] shadow-lg justify-between text-white items-center w-full md:px-5'>
+              {/* bg-[#2fbb57] */}
+            <div className='flex bg-[#45a15f] shadow-lg justify-between text-white items-center w-full md:px-5'>
 
               <span className='italic font-semibold hover:underline sm:text-xl sm:px-1 md:text-2xl lg:text-3xl py-3 text-slate-200'>
                 <Link href='/' className='flex-grow-2 flex-shrink-1 ml-10'>
@@ -41,7 +41,7 @@ function NavBar() {
             </div>
              
              
-             <div className={`sm:visible md:hidden lg:hidden ${barsClicked ? 'block':'hidden'} transition-all duration-500 bg-[#008080] overflow-hidden w-full flex justify-center text-white text-sm antialiased leading-tight tracking-tight`}>
+             <div className={`sm:visible md:hidden lg:hidden ${barsClicked ? 'block':'hidden'} transition-all duration-500 bg-[#45a15f] overflow-hidden w-full flex justify-center text-white text-sm antialiased leading-tight tracking-tight`}>
                 <div className='mx-2 hover:underline'><Link href='/'>Home</Link></div>
                 <div className='mx-2 hover:underline'><Link href='/how-to-use'>How to use</Link></div>
                 <div className='mx-2 hover:underline'><Link href='/search'>Search</Link></div>

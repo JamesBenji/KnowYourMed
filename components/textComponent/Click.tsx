@@ -5,7 +5,7 @@ import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 function Click() {
   return (
     <span>
-        <FontAwesomeIcon icon={faPaperclip} width={15} className='fa-light text-[#008080]'/>
+        <FontAwesomeIcon icon={faPaperclip} width={15} className='fa-light text-[#45a15f]'/>
         &nbsp;&nbsp;&nbsp;&nbsp;
     </span>
   )

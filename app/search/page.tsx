@@ -13,7 +13,7 @@ import SpecialPopulations from '@/components/resultComponents/SpecialPopulations
 import WarningsAndPrecautions from '@/components/resultComponents/WarningsAndPrecautions';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faLink, faMapPin } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClipboard, faLink, faMapPin } from '@fortawesome/free-solid-svg-icons';
 import Loading from './loading';
 
 const reducer = (state:any, action:any) => {
@@ -36,7 +36,7 @@ function SearchPage() {
   const submitRef: RefObject<HTMLButtonElement> = useRef(null);
   
   const generateRandomDrug = () => {
-    const randomSearchMade= ['Paracetamol', 'Ibuprofen', 'Naproxen', 'aspirin'];
+    const randomSearchMade= ['Paracetamol', 'Ibuprofen', 'Naproxen', 'Aspirin', 'Acetaminophen'];
 
     setRandomDrug(prev => { return randomSearchMade[Math.floor(Math.random() * randomSearchMade.length)]})
   }
@@ -79,19 +79,20 @@ function SearchPage() {
   }
 
   const toggleNavigation = () => {
-    setNaviationClicked(!navigationClicked);
+    console.log('toggleNavigation');
+    setNaviationClicked(prev => {return !navigationClicked});
   }
 
   return (
-    <section className='flex-col flex-1 w-3/4 m-auto lg:mt-0 max-h-[80vh] overflow-y-scroll p-0' >
+    <section className='lg:flex-col lg:flex-1 w-3/4 m-auto lg:mt-0 p-0 sm:block sm:min-h-screen' >
     <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative lg:gap-5'>
-      <form className='flex-col items-center border-[2px] border-gray-300 p-1 rounded-sm h-fit pb-2 lg:sticky lg:top-1'>
+      <form className='flex-col items-center border-[1px] border-gray-300 p-1 rounded-sm h-fit pb-4 lg:sticky lg:top-1 sm:shadow-custom'>
         <input 
             type="text" 
             placeholder='Brand or Generic name'
             value={state?.drugName}
             onChange={(e) => dispatch({ type: 'updateName', payload: e.target.value})}
-            className='p-2 w-3/4 border-[1px] border-[#008080] rounded-sm my-2 block mx-auto '
+            className='p-2 w-3/4 border-[1px] border-[#45a15f] rounded-sm my-2 block mx-auto outline-[#45a15f] '
             ref={inputRef}
           />
 
@@ -116,32 +117,34 @@ function SearchPage() {
                     icon={faBars}
                     onClick={() => toggleNavigation()}
                     className='md:hidden'
-                  />
+                />
+
               </h2>
-              <div className={`text-base sm:${navigationClicked ? 'block':'hidden'} md:block`}>
+              
+              <div className={`text-base ${navigationClicked ? 'block':'hidden'} md:block duration-300 transition-all`}>
                 
-                  <Link href={'#abuseOverdose'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Abuse and Overdose</Link>
+                  <Link href={'#abuseOverdose'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Abuse and Overdose</Link>
                   <br />
-                  <Link href={'#adverseEffectsAndInteractions'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Adverse Effects and Interactions</Link>
+                  <Link href={'#adverseEffectsAndInteractions'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Adverse Effects and Interactions</Link>
                   <br />
-                  <Link href={'#clinicalPharmacology'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Clinical Pharmacology</Link>
+                  <Link href={'#clinicalPharmacology'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Clinical Pharmacology</Link>
                   <br />
-                  <Link href={'#idAndVersion'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;ID and version</Link>
+                  <Link href={'#idAndVersion'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;ID and version</Link>
                   <br />
-                  <Link href={'#indicatorsUsageDosage'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Indicators Usage and Dosage</Link>
+                  <Link href={'#indicatorsUsageDosage'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Indicators Usage and Dosage</Link>
                   <br />
-                  <Link href={'#openFDAFields'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;OpenFDA Fields</Link>
+                  <Link href={'#openFDAFields'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;OpenFDA Fields</Link>
                   <br />
-                  <Link href={'#patientInformation'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Patient information</Link>
+                  <Link href={'#patientInformation'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Patient information</Link>
                   <br />
-                  <Link href={'#reference'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Reference</Link>
+                  <Link href={'#reference'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Reference</Link>
                   <br />
-                  <Link href={'#specialPopulations'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Special populations</Link>
+                  <Link href={'#specialPopulations'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Special populations</Link>
                   <br />
-                  <Link href={'#warningsAndPrecautions'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#008080]'/>&nbsp;Warnings and Precautions</Link>
+                  <Link href={'#warningsAndPrecautions'} className='hover:underline'><FontAwesomeIcon icon={faLink} width={15} className='text-[#45a15f]'/>&nbsp;Warnings and Precautions</Link>
                   <br />
 
-                  <button className='item-link text-sm text-left p-0'>Feeling quite lost? Look at a random search values</button>
+                  <button className='item-link text-sm text-left p-0 m-0'>Feeling quite lost? Look at a random search values</button>
                   <span className='ml-2'>
                     <button 
                       // ref={randomBtnRef}
@@ -151,6 +154,11 @@ function SearchPage() {
                       }}                
                     >
                       {randomDrug}
+                      &nbsp;&nbsp;
+                      <FontAwesomeIcon 
+                        icon={faClipboard}
+                        className='text-[#45a15f]'
+                      />
                     </button>
                   </span>
               </div>
@@ -159,14 +167,14 @@ function SearchPage() {
           
       </form>
 
-        <div className='lg:col-span-2 py-2 ml-2 px-5 relative'>
+        <div className='lg:col-span-2 mt-1 sm:ml-0 md:ml-2 px-5 relative sm:flex-grow-1 shadow-custom'>
           {clickedSearch ? 
               <Loading /> : 
               (
                 notFound ? (
-                  <p className='font-light text-lg'>No results here</p>
+                  <p className='font-light text-lg flex-grow-1'>No results here</p>
                 ) : (
-                  <div className='px-1 overflow-y-hidden sm:text-xl md:text-xl lg:text-2xl'>
+                  <div className='px-1 overflow-y-hidden sm:text-xl md:text-xl lg:text-lg border-[1px] pl-5 pt-5 shadow-custom'>
                     <AbuseOverdose searchResults={searchResults}/>
                     <AdverseEffectsAndInteractions searchResults={searchResults}/>
                     <ClinicalPharmacology searchResults={searchResults}/>

@@ -19,6 +19,9 @@ const config: Config = {
       backdropBlur: {
         'sm-blur': 'blur(1px)',
       },
+      boxShadow: {
+        'custom': '0px 0px 10px 0px rgba(0,0,0,0.1)'
+      },
     },
   },
   plugins: [],
