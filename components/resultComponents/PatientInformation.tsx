@@ -45,7 +45,7 @@ function PatientInformation({ searchResults }: any) {
         <section>
                 {
                     commonKeys.map(item => (
-                        <article>
+                        <article key={item}>
                             <b className='item-link'
                                 onClick={() => {
                                     toggleVisibility(item);
