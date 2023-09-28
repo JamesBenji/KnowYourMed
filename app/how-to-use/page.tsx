@@ -1,7 +1,14 @@
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'KnowYourMED',
+  description: 'How to use page',
+}
+
 
 function HowToUse() {
   return (
