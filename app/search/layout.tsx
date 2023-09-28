@@ -17,7 +17,7 @@ export default function SearchLayout({
   children: React.ReactNode
 }) {
   return (
-      <div className={inter.className} style={{display: 'flex', flexDirection: 'column', minHeight: '100vh', overflowY: 'auto'}}>
+      <div className={inter.className} style={{display: 'flex', flexDirection: 'column', overflowY: 'auto'}}>
         {children}
      </div>
   )

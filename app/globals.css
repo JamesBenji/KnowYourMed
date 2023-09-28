@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .item-header{
+    @apply text-[#006b6b] font-semibold text-xl my-1
+  }
+
+  .item-link {
+      @apply text-[#006b6b] font-[500] text-lg hover:underline hover:cursor-pointer
+  }
+
+  .item-content {
+    @apply my-1 ml-8
+  }
+
+  .description {
+    @apply my-1 mx-8 italic font-light
+  }
+
+  .btn-click{
+    @apply bg-black text-white p-2 w-full border-[#000] text-base rounded-sm 
+  }
+  
+  .btn-norm{
+    @apply bg-[#008080] text-white p-2 w-full border-[#008080] text-base rounded-sm 
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -15,8 +46,19 @@
 }
 
 body{
-  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+}
+
+.hero--bg{
+  background-image: url(/img-1-pill.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.hero--bg--sm{
+  background-color: red;
+  color: red;
 }

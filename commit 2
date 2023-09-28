@@ -1,0 +1,38 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   app/about/layout.tsx
+#	new file:   app/about/page.tsx
+#	new file:   app/favicon.ico
+#	modified:   app/globals.css
+#	modified:   app/layout.tsx
+#	modified:   app/page.tsx
+#	new file:   app/results/layout.tsx
+#	new file:   app/results/page.tsx
+#	new file:   app/search/layout.tsx
+#	new file:   app/search/page.tsx
+#	new file:   components/Footer.tsx
+#	new file:   components/Hero.tsx
+#	new file:   components/NavBar.tsx
+#	new file:   components/resultComponents/AbuseAndOverdosage.tsx
+#	new file:   constants/abuseAndOverdosage.ts
+#	new file:   constants/adverseEffectsAndInteractions.ts
+#	new file:   constants/clinicalPharmacology.ts
+#	new file:   constants/idAndVersion.ts
+#	new file:   constants/indicatorsUsageDosage.ts
+#	new file:   constants/openFDAFields.ts
+#	new file:   constants/patientInformation.ts
+#	new file:   constants/reference.ts
+#	new file:   constants/specialPopulations.ts
+#	new file:   constants/warningsAndPrecautions.ts
+#	modified:   package-lock.json
+#	modified:   package.json
+#	new file:   public/img-1-pill.jpg
+#	deleted:    public/next.svg
+#	deleted:    public/vercel.svg
+#

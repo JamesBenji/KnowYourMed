@@ -17,11 +17,12 @@ function Footer() {
 
         
 
-        <div className='flex gap-4 items-center align-middle justify-center p-1'>
-            <span>Get in touch with Benjamin via</span>
+        <div className='flex lg:gap-4 items-center align-middle justify-center p-1'>
+            <span>Get in touch with Benjamin via
             <Link href={'https://www.linkedin.com/in/mubiru-james-benjamin-b11a9218a'}> <FontAwesomeIcon icon={faLinkedin} width='20'/></Link>
             
             <Link href={`mailto:${email}`}><FontAwesomeIcon icon={faEnvelope} width='20'/></Link>
+            </span>
         </div>
 
     </div>

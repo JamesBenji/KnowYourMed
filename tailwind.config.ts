@@ -8,10 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '160px',
+        md: '540px',
+        lg: '1024px',
+        },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'sm-bg': 'url(/img-1-pill.jpg) 0px 0px',
+      },
+      backdropBlur: {
+        'sm-blur': 'blur(1px)',
       },
     },
   },
